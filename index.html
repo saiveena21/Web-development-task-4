@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Project Suite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="#" onclick="showSection('portfolio')">Portfolio</a>
+    <a href="#" onclick="showSection('todo')">To-Do App</a>
+    <a href="#" onclick="showSection('products')">Product List</a>
+  </nav>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section active">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Hello! I’m a passionate web developer with experience in HTML, CSS, JavaScript, and responsive design.</p>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="card">
+      <p>Portfolio Website, To-Do App, Product Listing Page with Filtering</p>
+    </div>
+
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: yourname@example.com</p>
+      <p>LinkedIn: linkedin.com/in/yourname</p>
+    </div>
+  </section>
+
+  <!-- To-Do App Section -->
+  <section id="todo" class="todo-section">
+    <h2>To-Do List</h2>
+    <input type="text" id="todoInput" placeholder="Enter a task"/>
+    <button onclick="addTodo()">Add</button>
+    <ul id="todoList" class="todo-list"></ul>
+  </section>
+
+  <!-- Product Listing Section -->
+  <section id="products" class="product-section">
+    <h2>Product Listing</h2>
+
+    <div class="filters">
+      <label>Category:
+        <select id="categoryFilter" onchange="filterProducts()">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">Clothing</option>
+        </select>
+      </label>
+
+      <label>Sort by:
+        <select id="sortOption" onchange="filterProducts()">
+          <option value="default">Default</option>
+          <option value="price">Price</option>
+          <option value="rating">Rating</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="productContainer"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
